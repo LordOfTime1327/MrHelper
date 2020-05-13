@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MrHelper</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container container_menu">
+        <h1 class="header__caption">
+          <a href="#home" class="header__link">Mr.Helper</a>
+        </h1>
+
+        <nav id="nav" class="nav">
+          <h2 class="nav__caption">
+            Menu
+            <div id="menuClose" class="menuClose">
+              <span class="menuClose__line"></span>
+            </div>
+          </h2>
+          <ul id="menu" class="menu">
+            <li data-menuanchor="colors" class="menu__item">
+              <a href="#colors" class="menu__link">Colors</a>
+            </li>
+            <li data-menuanchor="buttons" class="menu__item">
+              <a href="#buttons" class="menu__link">Buttons</a>
+            </li>
+            <li data-menuanchor="forms" class="menu__item">
+              <a href="#forms" class="menu__link">Forms</a>
+            </li>
+            <li data-menuanchor="cards" class="menu__item">
+              <a href="#cards" class="menu__link">Cards</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="burger" class="burger">
+          <span class="burger__line"></span>
+        </div>
+      </div>
+    </header>
+
+    <div id="fullpage">
+      <section class="section section_slider">
+        <article class="sliderBox test">
+          <div id="slider" class="slider">
+            <div class="slider__item slider__item_colors">
+              <span class="slider__content">Choose your favourite color</span>
+            </div>
+            <div class="slider__item slider__item_buttons">
+              <span class="slider__content">Many beautiful buttons</span>
+            </div>
+            <div class="slider__item slider__item_forms">
+              <span class="slider__content">Find cool form</span>
+            </div>
+            <div class="slider__item slider__item_cards">
+              <span class="slider__content">Choose interactive card</span>
+            </div>
+          </div>
+          <img src="img/down-arrow.png" alt="" class="arrowDown" />
+        </article>
+      </section>
+
+      <section class="section section_colors">
+        <div id="container-colors" class="container container_colors">
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+          <div class="color">
+            <p class="color__hex">#000000</p>
+          </div>
+
+          <button class="refresh-color">
+            <img src="img/reload.png" alt="" class="refresh-color__img" />
+          </button>
+          <span id="copied-color" class="copied-color"
+            >The color copied to clipboard</span
+          >
+        </div>
+      </section>
+
+      <section class="section section_buttons">
+        <div class="slide slide_btnOne">
+          <div class="container container_btns">
+            <div class="btnWrapper">
+              <button class="btn btnOne">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnOne">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnOne">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnOne">Hover me</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_btnTwo">
+          <div class="container container_btns">
+            <div class="btnWrapper">
+              <button class="btn btnTwo btnTwo_one">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnTwo btnTwo_two">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnTwo btnTwo_three">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnTwo btnTwo_four">Hover me</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_btnThree">
+          <div class="container container_btns">
+            <div class="btnWrapper">
+              <button class="btn btnThree btnThree_one">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnThree btnThree_two">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnThree btnThree_three">Hover me</button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnThree btnThree_four">Hover me</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_btnFour">
+          <div class="container container_btns">
+            <div class="btnWrapper">
+              <button class="btn btnFour btnFour_one">
+                Hover me
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFour btnFour_two">
+                Hover me
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFour btnFour_three">
+                Hover me
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFour btnFour_four">
+                Hover me
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_btnFive">
+          <div class="container container_btns">
+            <div class="btnWrapper">
+              <button class="btn btnFive btnFive_one">
+                Hover me
+                <span
+                  class="btnFive__span btnFive__span_one btnFive__span_oneTop btnFive__span_top"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_one btnFive__span_oneRight btnFive__span_right"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_one btnFive__span_oneBottom btnFive__span_bottom"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_one btnFive__span_oneLeft btnFive__span_left"
+                ></span>
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFive btnFive_two">
+                Hover me
+                <span
+                  class="btnFive__span btnFive__span_two btnFive__span_twoTop btnFive__span_top"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_two btnFive__span_twoRight btnFive__span_right"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_two btnFive__span_twoBottom btnFive__span_bottom"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_two btnFive__span_twoLeft btnFive__span_left"
+                ></span>
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFive btnFive_three">
+                Hover me
+                <span
+                  class="btnFive__span btnFive__span_three btnFive__span_threeLeft btnFive__span_top"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_three btnFive__span_threeLeft btnFive__span_right"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_three btnFive__span_threeLeft btnFive__span_bottom"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_three btnFive__span_threeLeft btnFive__span_left"
+                ></span>
+              </button>
+            </div>
+            <div class="btnWrapper">
+              <button class="btn btnFive btnFive_four">
+                Hover me
+                <span
+                  class="btnFive__span btnFive__span_four btnFive__span_fourLeft btnFive__span_top"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_four btnFive__span_fourLeft btnFive__span_right"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_four btnFive__span_fourLeft btnFive__span_bottom"
+                ></span>
+                <span
+                  class="btnFive__span btnFive__span_four btnFive__span_fourLeft btnFive__span_left"
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_btnSix">
+          <div class="container container_btns">
+            <button class="btn btnSix">Hover me</button>
+            <button class="btn btnSix">Hover me</button>
+            <button class="btn btnSix">Hover me</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section_forms">
+        <div class="slide slide_formsOne">
+          <div class="container">
+            <h2 class="formCaption formCaption_one">Login</h2>
+            <form action="#" class="formOne">
+              <div class="formOne__box">
+                <i class="fas fa-user formOne__icon"></i>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="formOne__input"
+                />
+              </div>
+              <div class="formOne__box">
+                <i class="fas fa-lock formOne__icon"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="formOne__input"
+                />
+              </div>
+              <button type="submit" class="formOne__submit">
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="slide slide_formsTwo">
+          <div class="container container_forms">
+            <h2 class="formCaption formCaption_two">Contact Us</h2>
+            <form action="#" class="formTwo">
+              <div class="formTwo__row">
+                <div class="formTwo__col">
+                  <div class="formTwo__box">
+                    <input
+                      type="text"
+                      id="formTwoFirstName"
+                      class="formTwo__input"
+                      required
+                      autocomplete="off"
+                    />
+                    <label for="formTwoFirstName" class="formTwo__label"
+                      >First Name</label
+                    >
+                    <span class="formTwo__line"></span>
+                  </div>
+                </div>
+
+                <div class="formTwo__col">
+                  <div class="formTwo__box">
+                    <input
+                      type="text"
+                      id="formTwoLastName"
+                      class="formTwo__input"
+                      required
+                      autocomplete="off"
+                    />
+                    <label for="formTwoLastName" class="formTwo__label"
+                      >Last Name</label
+                    >
+                    <span class="formTwo__line"></span>
+                  </div>
+                </div>
+
+                <div class="formTwo__col">
+                  <div class="formTwo__box">
+                    <input
+                      type="email"
+                      id="formTwoEmail"
+                      class="formTwo__input"
+                      required
+                      autocomplete="nope"
+                    />
+                    <label for="formTwoEmail" class="formTwo__label"
+                      >Email</label
+                    >
+                    <span class="formTwo__line"></span>
+                  </div>
+                </div>
+
+                <div class="formTwo__col">
+                  <div class="formTwo__box">
+                    <input
+                      type="tel"
+                      id="formTwoPhone"
+                      class="formTwo__input"
+                      required
+                      autocomplete="nope"
+                    />
+                    <label for="formTwoPhone" class="formTwo__label"
+                      >Phone Number</label
+                    >
+                    <span class="formTwo__line"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="formTwo__row">
+                <div class="formTwo__col">
+                  <div class="formTwo__box formTwo__textareaBox">
+                    <textarea
+                      name=""
+                      id="formTwoTextarea"
+                      cols="30"
+                      rows="10"
+                      class="formTwo__textarea"
+                      required
+                    ></textarea>
+                    <label for="formTwoTextarea" class="formTwo__label"
+                      >Type your message here...</label
+                    >
+                    <span class="formTwo__line"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="formTwo__row">
+                <div class="formTwo__col">
+                  <input type="submit" value="Send" class="formTwo__submit" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="slide slide_formsThree">
+          <div class="container container_three">
+            <form action="#" class="formThree">
+              <h2 class="formCaption formCaption_three">Sign in</h2>
+
+              <input
+                type="text"
+                placeholder="Login"
+                class="formThree__input"
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="formThree__input"
+                required
+              />
+              <input type="submit" value="Sign In" class="formThree__submit"">
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section_cards">
+        <div class="slide slide_cardsOne">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxOne cardBoxOne_one">
+              <div class="cardBoxOne__content">
+                <h2 class="cardBoxOne__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxOne__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dolor quia animi ipsum ut autem eaque! Quod cumque eius et
+                  quis placeat perspiciatis facilis, voluptatibus debitis
+                  asperiores odit cum corrupti, dolorum blanditiis aperiam
+                  nobis, dolores ipsum eos ipsam alias? Adipisci cumque, nulla
+                  laboriosam tempore voluptates nisi, placeat dolore, hic
+                  voluptatibus possimus velit. Beatae soluta quam consequuntur
+                  aspernatur fugiat nisi, quae libero neque reiciendis ratione
+                  modi nesciunt nam! Quos rerum architecto unde inventore, nihil
+                  aspernatur ipsa aut harum debitis vel, fugiat quam.
+                </p>
+              </div>
+            </div>
+            <div class="cardBox cardBoxOne cardBoxOne_two">
+              <div class="cardBoxOne__content">
+                <h2 class="cardBoxOne__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxOne__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dolor quia animi ipsum ut autem eaque! Quod cumque eius et
+                  quis placeat perspiciatis facilis, voluptatibus debitis
+                  asperiores odit cum corrupti, dolorum blanditiis aperiam
+                  nobis, dolores ipsum eos ipsam alias? Adipisci cumque, nulla
+                  laboriosam tempore voluptates nisi, placeat dolore, hic
+                  voluptatibus possimus velit. Beatae soluta quam consequuntur
+                  aspernatur fugiat nisi, quae libero neque reiciendis ratione
+                  modi nesciunt nam! Quos rerum architecto unde inventore, nihil
+                  aspernatur ipsa aut harum debitis vel, fugiat quam.
+                </p>
+              </div>
+            </div>
+            <div class="cardBox cardBoxOne cardBoxOne_three">
+              <div class="cardBoxOne__content">
+                <h2 class="cardBoxOne__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxOne__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dolor quia animi ipsum ut autem eaque! Quod cumque eius et
+                  quis placeat perspiciatis facilis, voluptatibus debitis
+                  asperiores odit cum corrupti, dolorum blanditiis aperiam
+                  nobis, dolores ipsum eos ipsam alias? Adipisci cumque, nulla
+                  laboriosam tempore voluptates nisi, placeat dolore, hic
+                  voluptatibus possimus velit. Beatae soluta quam consequuntur
+                  aspernatur fugiat nisi, quae libero neque reiciendis ratione
+                  modi nesciunt nam! Quos rerum architecto unde inventore, nihil
+                  aspernatur ipsa aut harum debitis vel, fugiat quam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsTwo">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxTwo cardBoxTwo_one">
+              <div class="cardBoxTwo__content">
+                <h2 class="cardBoxTwo__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxTwo__text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquam, nobis odio? A, modi quae? Facere iusto laborum
+                  deserunt. Dolorum repellat vitae tenetur neque nisi tempora ab
+                  nihil voluptatum nemo sed.
+                </p>
+                <a href="#cards/1" class="cardBoxTwo__link">Read more</a>
+              </div>
+            </div>
+            <div class="cardBox cardBoxTwo cardBoxTwo_two">
+              <div class="cardBoxTwo__content">
+                <h2 class="cardBoxTwo__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxTwo__text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquam, nobis odio? A, modi quae? Facere iusto laborum
+                  deserunt. Dolorum repellat vitae tenetur neque nisi tempora ab
+                  nihil voluptatum nemo sed.
+                </p>
+                <a href="#cards/1" class="cardBoxTwo__link">Read more</a>
+              </div>
+            </div>
+            <div class="cardBox cardBoxTwo cardBoxTwo_three">
+              <div class="cardBoxTwo__content">
+                <h2 class="cardBoxTwo__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxTwo__text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquam, nobis odio? A, modi quae? Facere iusto laborum
+                  deserunt. Dolorum repellat vitae tenetur neque nisi tempora ab
+                  nihil voluptatum nemo sed.
+                </p>
+                <a href="#cards/1" class="cardBoxTwo__link">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsThree">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxThree cardBoxThree_one">
+              <div class="cardBoxThree__front">
+                <img
+                  src="img/photo-card-3.jpg"
+                  alt=""
+                  class="cardBoxThree__img"
+                />
+              </div>
+              <div class="cardBoxThree__back">
+                <h2 class="cardBoxThree__caption">John Doe</h2>
+                <span class="cardBoxThree__position">Designer</span>
+                <div class="cardBoxThree__social">
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-google"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="cardBox cardBoxThree cardBoxThree_two">
+              <div class="cardBoxThree__front">
+                <img
+                  src="img/photo-card-1.jpg"
+                  alt=""
+                  class="cardBoxThree__img"
+                />
+              </div>
+              <div class="cardBoxThree__back">
+                <h2 class="cardBoxThree__caption">Elizabeth Jonson</h2>
+                <span class="cardBoxThree__position">HR-manager</span>
+                <div class="cardBoxThree__social">
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-google"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="cardBox cardBoxThree cardBoxThree_three">
+              <div class="cardBoxThree__front">
+                <img
+                  src="img/photo-card-2.jpg"
+                  alt=""
+                  class="cardBoxThree__img"
+                />
+              </div>
+              <div class="cardBoxThree__back">
+                <h2 class="cardBoxThree__caption">James Williams</h2>
+                <span class="cardBoxThree__position">Web Developer</span>
+                <div class="cardBoxThree__social">
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-google"></i
+                  ></a>
+                  <a href="#cards/2" class="cardBoxThree__link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsFour">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxFour cardBoxFour_one">
+              <div class="cardBoxFour__imgBox">
+                <img
+                  src="img/photo-card-4.jpg"
+                  alt=""
+                  class="cardBoxFour__img"
+                />
+              </div>
+              <div class="cardBoxFour__content">
+                <h2 class="cardBoxFour__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxFour__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Atque, iste optio, deserunt nihil consectetur perspiciatis
+                  soluta labore itaque assumenda minima quidem cupiditate
+                  incidunt ea rerum quis vero sunt eligendi vel. Architecto
+                  consequuntur natus doloremque! Cupiditate, nihil. Harum alias
+                  inventore iusto mollitia fugiat a error ipsum! Libero fuga ab
+                  sit asperiores!
+                </p>
+              </div>
+            </div>
+            <div class="cardBox cardBoxFour cardBoxFour_one">
+              <div class="cardBoxFour__imgBox">
+                <img
+                  src="img/photo-card-6.jpg"
+                  alt=""
+                  class="cardBoxFour__img"
+                />
+              </div>
+              <div class="cardBoxFour__content">
+                <h2 class="cardBoxFour__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxFour__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Atque, iste optio, deserunt nihil consectetur perspiciatis
+                  soluta labore itaque assumenda minima quidem cupiditate
+                  incidunt ea rerum quis vero sunt eligendi vel. Architecto
+                  consequuntur natus doloremque! Cupiditate, nihil. Harum alias
+                  inventore iusto mollitia fugiat a error ipsum! Libero fuga ab
+                  sit asperiores!
+                </p>
+              </div>
+            </div>
+            <div class="cardBox cardBoxFour cardBoxFour_one">
+              <div class="cardBoxFour__imgBox">
+                <img
+                  src="img/photo-card-5.jpg"
+                  alt=""
+                  class="cardBoxFour__img"
+                />
+              </div>
+              <div class="cardBoxFour__content">
+                <h2 class="cardBoxFour__caption">Lorem, ipsum dolor.</h2>
+                <p class="cardBoxFour__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Atque, iste optio, deserunt nihil consectetur perspiciatis
+                  soluta labore itaque assumenda minima quidem cupiditate
+                  incidunt ea rerum quis vero sunt eligendi vel. Architecto
+                  consequuntur natus doloremque! Cupiditate, nihil. Harum alias
+                  inventore iusto mollitia fugiat a error ipsum! Libero fuga ab
+                  sit asperiores!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsFive">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxFive cardBoxFive_one">
+              <img src="img/photo-card-8.jpg" alt="" class="cardBoxFive__img" />
+            </div>
+            <div class="cardBox cardBoxFive cardBoxFive_two">
+              <img src="img/photo-card-7.jpg" alt="" class="cardBoxFive__img" />
+            </div>
+            <div class="cardBox cardBoxFive cardBoxFive_three">
+              <img src="img/photo-card-9.jpg" alt="" class="cardBoxFive__img" />
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsSix">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxSix cardBoxSix_one">
+              <div class="cardBoxSix__content">
+                <h2 class="cardBoxSix__caption">Caption One</h2>
+                <p class="cardBoxSix__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis sint aliquam beatae! Velit, commodi tempora quod vel
+                  dolore nam aperiam odio omnis quisquam eos magni eligendi qui
+                  optio est ab.
+                </p>
+                <a href="#" class="cardBoxSix__link">Read more</a>
+                <span class="cardBoxSix__number">01</span>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxSix cardBoxSix_two">
+              <div class="cardBoxSix__content">
+                <h2 class="cardBoxSix__caption">Caption Two</h2>
+                <p class="cardBoxSix__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis sint aliquam beatae! Velit, commodi tempora quod vel
+                  dolore nam aperiam odio omnis quisquam eos magni eligendi qui
+                  optio est ab.
+                </p>
+                <a href="#" class="cardBoxSix__link">Read more</a>
+                <span class="cardBoxSix__number">02</span>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxSix cardBoxSix_three">
+              <div class="cardBoxSix__content">
+                <h2 class="cardBoxSix__caption">Caption Three</h2>
+                <p class="cardBoxSix__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis sint aliquam beatae! Velit, commodi tempora quod vel
+                  dolore nam aperiam odio omnis quisquam eos magni eligendi qui
+                  optio est ab.
+                </p>
+                <a href="#" class="cardBoxSix__link">Read more</a>
+                <span class="cardBoxSix__number">03</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsSeven">
+          <div class="container container_cards">
+            <div class="cardBox cardBoxSeven cardBoxSeven_one">
+              <div class="cardBoxSeven__imgBox">
+                <img src="img/nike-1.png" alt="" class="cardBoxSeven__img" />
+              </div>
+              <div class="cardBoxSeven__content">
+                <h2 class="cardBoxSeven__caption">Nike Shoes</h2>
+                <div class="cardBoxSeven__sizeBox">
+                  <h3 class="cardBoxSeven__sizeCaption">Size :</h3>
+                  <span class="cardBoxSeven__number">7</span>
+                  <span class="cardBoxSeven__number">8</span>
+                  <span class="cardBoxSeven__number">9</span>
+                  <span class="cardBoxSeven__number">10</span>
+                </div>
+                <div class="cardBoxSeven__colorBox">
+                  <h3 class="cardBoxSeven__colorCaption">Color :</h3>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_lime"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_blue"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_red"
+                  ></span>
+                </div>
+                <a href="#" class="cardBoxSeven__link">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxSeven cardBoxSeven_one">
+              <div class="cardBoxSeven__imgBox">
+                <img src="img/nike-2.png" alt="" class="cardBoxSeven__img" />
+              </div>
+              <div class="cardBoxSeven__content">
+                <h2 class="cardBoxSeven__caption">Nike Shoes</h2>
+                <div class="cardBoxSeven__sizeBox">
+                  <h3 class="cardBoxSeven__sizeCaption">Size :</h3>
+                  <span class="cardBoxSeven__number">7</span>
+                  <span class="cardBoxSeven__number">8</span>
+                  <span class="cardBoxSeven__number">9</span>
+                  <span class="cardBoxSeven__number">10</span>
+                </div>
+                <div class="cardBoxSeven__colorBox">
+                  <h3 class="cardBoxSeven__colorCaption">Color :</h3>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_brown"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_darkGrey"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_darkBlue"
+                  ></span>
+                </div>
+                <a href="#" class="cardBoxSeven__link">Buy Now</a>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxSeven cardBoxSeven_one">
+              <div class="cardBoxSeven__imgBox">
+                <img src="img/nike-3.png" alt="" class="cardBoxSeven__img" />
+              </div>
+              <div class="cardBoxSeven__content">
+                <h2 class="cardBoxSeven__caption">Nike Shoes</h2>
+                <div class="cardBoxSeven__sizeBox">
+                  <h3 class="cardBoxSeven__sizeCaption">Size :</h3>
+                  <span class="cardBoxSeven__number">7</span>
+                  <span class="cardBoxSeven__number">8</span>
+                  <span class="cardBoxSeven__number">9</span>
+                  <span class="cardBoxSeven__number">10</span>
+                </div>
+                <div class="cardBoxSeven__colorBox">
+                  <h3 class="cardBoxSeven__colorCaption">Color :</h3>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_red"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_blue"
+                  ></span>
+                  <span
+                    class="cardBoxSeven__color cardBoxSeven__color_lime"
+                  ></span>
+                </div>
+                <a href="#" class="cardBoxSeven__link">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsEight">
+          <div class="container container_cards">
+            <div class="cardBoxEight">
+              <div class="cardBoxEight__imgBox">
+                <img
+                  src="img/photo-card-12.png"
+                  alt=""
+                  class="cardBoxEight__img"
+                />
+                <h2 class="cardBoxEight__caption">Design</h2>
+              </div>
+              <div class="cardBoxEight__contentBox">
+                <p class="cardBoxEight__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores consectetur, recusandae quas culpa id maxime pariatur
+                  dolorum aut ratione beatae.
+                </p>
+                <a href="#" class="cardBoxEight__link">Read more</a>
+              </div>
+            </div>
+
+            <div class="cardBoxEight">
+              <div class="cardBoxEight__imgBox">
+                <img
+                  src="img/photo-card-11.png"
+                  alt=""
+                  class="cardBoxEight__img"
+                />
+                <h2 class="cardBoxEight__caption">Code</h2>
+              </div>
+              <div class="cardBoxEight__contentBox">
+                <p class="cardBoxEight__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores consectetur, recusandae quas culpa id maxime pariatur
+                  dolorum aut ratione beatae.
+                </p>
+                <a href="#" class="cardBoxEight__link">Read more</a>
+              </div>
+            </div>
+
+            <div class="cardBoxEight">
+              <div class="cardBoxEight__imgBox">
+                <img
+                  src="img/photo-card-10.png"
+                  alt=""
+                  class="cardBoxEight__img"
+                />
+                <h2 class="cardBoxEight__caption">Launch</h2>
+              </div>
+              <div class="cardBoxEight__contentBox">
+                <p class="cardBoxEight__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores consectetur, recusandae quas culpa id maxime pariatur
+                  dolorum aut ratione beatae.
+                </p>
+                <a href="#" class="cardBoxEight__link">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide_cardsNine">
+          <div class="container container_cards container_cardsSkew">
+            <div class="cardBox cardBoxNine">
+              <div class="cardBoxNine__imgBox">
+                <img
+                  src="img/photo-card-12.png"
+                  alt=""
+                  class="cardBoxNine__img"
+                />
+                <h2 class="cardBoxNine__caption">Design</h2>
+              </div>
+              <div class="cardBoxNine__contentBox">
+                <p class="cardBoxNine__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  quam quo officia iure tempora. Inventore, laboriosam beatae
+                  enim officiis illum neque iure excepturi, laborum odit dicta
+                  atque laudantium magni veritatis.
+                </p>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxNine">
+              <div class="cardBoxNine__imgBox">
+                <img
+                  src="img/photo-card-11.png"
+                  alt=""
+                  class="cardBoxNine__img"
+                />
+                <h2 class="cardBoxNine__caption">Code</h2>
+              </div>
+              <div class="cardBoxNine__contentBox">
+                <p class="cardBoxNine__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  quam quo officia iure tempora. Inventore, laboriosam beatae
+                  enim officiis illum neque iure excepturi, laborum odit dicta
+                  atque laudantium magni veritatis.
+                </p>
+              </div>
+            </div>
+
+            <div class="cardBox cardBoxNine">
+              <div class="cardBoxNine__imgBox">
+                <img
+                  src="img/photo-card-10.png"
+                  alt=""
+                  class="cardBoxNine__img"
+                />
+                <h2 class="cardBoxNine__caption">Launch</h2>
+              </div>
+              <div class="cardBoxNine__contentBox">
+                <p class="cardBoxNine__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  quam quo officia iure tempora. Inventore, laboriosam beatae
+                  enim officiis illum neque iure excepturi, laborum odit dicta
+                  atque laudantium magni veritatis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <!-- <script src="js/easings.min.js"></script>
+    <script src="js/scrolloverflow.min.js"></script>
+    <script src="js/fullpage.min.js"></script> -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

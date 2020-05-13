@@ -1,0 +1,45 @@
+.formOne {
+  margin: 0 30px;
+
+  position: relative;
+  z-index: 2;
+
+  @include e(box) {
+    border-bottom: 3px solid $formOne;
+    margin-bottom: 20px;
+    padding: 0 7px;
+  }
+
+  @include e(input) {
+    display: inline-block;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 7px;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  @include e(icon) {
+    color: #fff;
+  }
+
+  @include e(submit) {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 3px solid $formOne;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    &:hover {
+      background: $formOne;
+    }
+  }
+}

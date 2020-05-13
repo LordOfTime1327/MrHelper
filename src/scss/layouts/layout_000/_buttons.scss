@@ -1,0 +1,548 @@
+.slide {
+  @include m(btnOne) {
+    background: #353b48;
+  }
+  @include m(btnTwo) {
+    background: #353b48;
+  }
+  @include m(btnThree) {
+    background: #353b48;
+  }
+  @include m(btnFour) {
+    background: #353b48;
+  }
+  @include m(btnFive) {
+    background: #111111;
+  }
+  @include m(btnSix) {
+    background: #111111;
+  }
+}
+
+%btnOneBeforeAfter {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background: #353b48;
+  transform: skewX(45deg);
+  transition: 0.5s;
+}
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  &:nth-of-type(1) .btnOne {
+    border-color: #9af526;
+    color: #9af526;
+  }
+  &:nth-of-type(2) .btnOne {
+    border-color: #16dff9;
+    color: #16dff9;
+  }
+  &:nth-of-type(3) .btnOne {
+    border-color: #ef0303;
+    color: #ef0303;
+  }
+  &:nth-of-type(4) .btnOne {
+    border-color: #f5ef0e;
+    color: #f5ef0e;
+  }
+}
+
+// btn one
+.btnOne {
+  display: block;
+  font-family: $josefinSans;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: transparent;
+  outline: none;
+  border: 4px solid #fff;
+  padding: 15px 40px;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    @extend %btnOneBeforeAfter;
+    top: -4px;
+    left: 10%;
+  }
+  &::after {
+    @extend %btnOneBeforeAfter;
+    bottom: -4px;
+    right: 10%;
+  }
+
+  &:hover {
+    &::before {
+      left: 80%;
+    }
+    &::after {
+      right: 80%;
+    }
+  }
+}
+
+// btn two
+.btnTwo {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  color: #fff;
+  border: 4px solid #f8656c;
+  outline: none;
+  padding: 10px 40px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    display: block;
+    background: #f8656c;
+    transition: 0.5s;
+  }
+
+  @include m(one) {
+    &::before {
+      width: 0;
+      height: 100%;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+  @include m(two) {
+    &::before {
+      width: 101%;
+      height: 0;
+    }
+    &:hover::before {
+      height: 100%;
+    }
+  }
+  @include m(three) {
+    &::before {
+      width: 100%;
+      height: 0;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:hover::before {
+      height: 350%;
+    }
+  }
+  @include m(four) {
+    &::before {
+      width: 100%;
+      height: 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &:hover::before {
+      height: 350%;
+    }
+  }
+}
+
+// btn three
+.btnThree {
+  display: block;
+  padding: 10px 20px;
+  background: transparent;
+  border: 3px solid #258af9;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: 0.8s;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: #258af9;
+    z-index: -1;
+    transition: 0.8s;
+  }
+
+  @include m(one) {
+    color: #258af9;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &::before {
+      border-radius: 0 0 50% 50%;
+      top: 0;
+      left: 0;
+      transform-origin: top;
+      height: 0;
+    }
+    &:hover::before {
+      height: 200%;
+    }
+  }
+  @include m(two) {
+    color: #258af9;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &::before {
+      border-radius: 50% 50% 0 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom;
+      height: 0;
+    }
+    &:hover::before {
+      height: 200%;
+    }
+  }
+  @include m(three) {
+    color: #fff;
+
+    &:hover {
+      color: #258af9;
+    }
+
+    &::before {
+      border-radius: 0 0 50% 50%;
+      top: 0;
+      left: 0;
+      transform-origin: bottom;
+      height: 200%;
+    }
+    &:hover::before {
+      height: 0;
+    }
+  }
+  @include m(four) {
+    color: #fff;
+
+    &:hover {
+      color: #258af9;
+    }
+
+    &::before {
+      border-radius: 50% 50% 0 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom;
+      height: 200%;
+    }
+    &:hover::before {
+      height: 0;
+    }
+  }
+}
+
+// btn four
+.btnFour {
+  display: block;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #fff;
+  background: red;
+  padding: 15px 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  @include m(one) {
+    background: linear-gradient(
+      to right bottom,
+      rgba($color: #9af526, $alpha: 0.7) 66%,
+      rgba($color: #fff, $alpha: 0.7)
+    );
+  }
+  @include m(two) {
+    background: linear-gradient(
+      to left bottom,
+      rgba($color: #16dff9, $alpha: 0.7) 66%,
+      rgba($color: #fff, $alpha: 0.7)
+    );
+  }
+  @include m(three) {
+    background: linear-gradient(
+      to right top,
+      rgba($color: #ef0303, $alpha: 0.7) 66%,
+      rgba($color: #fff, $alpha: 0.7)
+    );
+  }
+  @include m(four) {
+    background: linear-gradient(
+      to left top,
+      rgba($color: #f5ef0e, $alpha: 0.7) 66%,
+      rgba($color: #fff, $alpha: 0.7)
+    );
+  }
+
+  @include e(circle) {
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: btnFourCircleAnimation 1s linear;
+  }
+}
+@keyframes btnFourCircleAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.4;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+// btn five
+.btnFive {
+  display: block;
+  position: relative;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  background: transparent;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+
+  @include m(one) {
+    color: $neonGreen;
+  }
+  @include m(two) {
+    color: $neonYellow;
+  }
+  @include m(three) {
+    color: $neonRed;
+  }
+  @include m(four) {
+    color: $neonBlue;
+  }
+
+  @include e(span) {
+    position: absolute;
+
+    @include m(top) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+    }
+    @include m(right) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+    }
+    @include m(bottom) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+    }
+    @include m(left) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    color: #111111;
+    transition-delay: 1s;
+
+    &.btnFive {
+      @include m(one) {
+        background: $neonGreen;
+        box-shadow: 0 0 10px $neonGreen, 0 0 40px $neonGreen,
+          0 0 80px $neonGreen;
+      }
+      @include m(two) {
+        background: #fffc00;
+        box-shadow: 0 0 10px $neonYellow, 0 0 40px $neonYellow,
+          0 0 80px $neonYellow;
+      }
+      @include m(three) {
+        background: $neonRed;
+        box-shadow: 0 0 10px $neonRed, 0 0 40px $neonRed, 0 0 80px $neonRed;
+      }
+      @include m(four) {
+        background: $neonBlue;
+        box-shadow: 0 0 10px $neonBlue, 0 0 40px $neonBlue, 0 0 80px $neonBlue;
+      }
+    }
+  }
+  &:hover .btnFive {
+    @include e(span) {
+      transition: 1s;
+
+      @include m(oneTop) {
+        background: linear-gradient(90deg, transparent, $neonGreen);
+      }
+      @include m(oneRight) {
+        background: linear-gradient(180deg, transparent, $neonGreen);
+      }
+      @include m(oneBottom) {
+        background: linear-gradient(270deg, transparent, $neonGreen);
+      }
+      @include m(oneLeft) {
+        background: linear-gradient(360deg, transparent, $neonGreen);
+      }
+
+      @include m(twoTop) {
+        background: linear-gradient(90deg, transparent, $neonYellow);
+      }
+      @include m(twoRight) {
+        background: linear-gradient(180deg, transparent, $neonYellow);
+      }
+      @include m(twoBottom) {
+        background: linear-gradient(270deg, transparent, $neonYellow);
+      }
+      @include m(twoLeft) {
+        background: linear-gradient(360deg, transparent, $neonYellow);
+      }
+
+      @include m(threeTop) {
+        background: linear-gradient(90deg, transparent, $neonRed);
+      }
+      @include m(threeRight) {
+        background: linear-gradient(180deg, transparent, $neonRed);
+      }
+      @include m(threeBottom) {
+        background: linear-gradient(270deg, transparent, $neonRed);
+      }
+      @include m(threeLeft) {
+        background: linear-gradient(360deg, transparent, $neonRed);
+      }
+
+      @include m(fourTop) {
+        background: linear-gradient(90deg, transparent, $neonBlue);
+      }
+      @include m(fourRight) {
+        background: linear-gradient(180deg, transparent, $neonBlue);
+      }
+      @include m(fourBottom) {
+        background: linear-gradient(270deg, transparent, $neonBlue);
+      }
+      @include m(fourLeft) {
+        background: linear-gradient(360deg, transparent, $neonBlue);
+      }
+
+      @include m(top) {
+        left: 100%;
+      }
+      @include m(right) {
+        top: 100%;
+        transition-delay: 0.25s;
+      }
+      @include m(bottom) {
+        right: 100%;
+        transition-delay: 0.5s;
+      }
+      @include m(left) {
+        bottom: 100%;
+        transition-delay: 0.75s;
+      }
+    }
+  }
+}
+
+// btn six
+%btnSixBeforeAfter {
+  content: "";
+  position: absolute;
+  border: 3px solid #04d9ff;
+  width: 10px;
+  height: 10px;
+}
+.btnSix {
+  display: block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  padding: 15px 40px;
+  margin: 50px 30px;
+  background: transparent;
+  font-size: 1.5rem;
+  color: #04d9ff;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+
+  &:nth-of-type(1) {
+    filter: hue-rotate(115deg);
+  }
+  &:nth-of-type(3) {
+    filter: hue-rotate(270deg);
+  }
+
+  &::before {
+    @extend %btnSixBeforeAfter;
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  &::after {
+    @extend %btnSixBeforeAfter;
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 50px #04d9ff;
+    background: #04d9ff;
+    color: #111;
+    transition-delay: 0.5s;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      transition-delay: 0s;
+    }
+    &::after {
+      width: 100%;
+      height: 100%;
+      transition-delay: 0s;
+    }
+  }
+}

@@ -1,0 +1,995 @@
+.slide {
+  min-height: 100%;
+  @include m(cardsOne) {
+    background: #003e46;
+  }
+  @include m(cardsTwo) {
+    background: #222;
+  }
+  @include m(cardsThree) {
+    background: #333;
+  }
+  @include m(cardsFour) {
+    // background: linear-gradient(to top left, red, green, blue);
+    background: #518f77;
+  }
+  @include m(cardsFive) {
+    background: #333;
+  }
+  @include m(cardsSix) {
+    background: #060c21;
+  }
+  @include m(cardsSeven) {
+    background: #131313;
+  }
+  @include m(cardsEight) {
+    background: #333;
+  }
+  @include m(cardsNine) {
+    background: rgb(220, 220, 220);
+  }
+  @include m(cardsTen) {
+    background: #060c21;
+  }
+}
+
+.cardBox {
+  display: block;
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  // cursor: pointer;
+}
+
+// card one
+.cardBoxOne {
+  box-shadow: 0 0 10px 10px rgba($color: #000000, $alpha: 0.5);
+  position: relative;
+
+  @include m(one) {
+    background: #000 url("../img/bg-card-1.jpg") center center / cover no-repeat;
+  }
+  @include m(two) {
+    background: #000 url("../img/bg-card-2.jpg") center center / cover no-repeat;
+  }
+  @include m(three) {
+    background: #000 url("../img/bg-card-3.jpg") center center / cover no-repeat;
+  }
+
+  @include e(content) {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  @include e(caption) {
+    font-size: 1.3rem;
+    line-height: 40px;
+    padding-bottom: 10px;
+  }
+
+  @include e(text) {
+    text-align: justify;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    & .cardBoxOne {
+      @include e(content) {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @include e(text) {
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+}
+
+// card two
+.cardBoxTwo {
+  border-radius: 5px;
+  margin-bottom: 30px;
+  position: relative;
+  transition: all 0.5s;
+
+  @include m(one) {
+    background: url(../img/bg-card-4.jpg) center center / cover no-repeat;
+  }
+  @include m(two) {
+    background: url(../img/bg-card-5.jpg) center center / cover no-repeat;
+  }
+  @include m(three) {
+    background: url(../img/bg-card-6.jpg) center center / cover no-repeat;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(
+      to bottom,
+      /*rgba(0, 201, 255, 0.5),
+      rgba(146, 254, 157, 1)*/
+        rgba(5, 117, 230, 0.5),
+      rgba(0, 242, 96, 1)
+    );
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  @include e(content) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 0.5s;
+  }
+
+  @include e(caption) {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+  @include e(text) {
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+  }
+  @include e(link) {
+    display: inline-block;
+    background: #fff;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translate(3px, -3px);
+      box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.8),
+        -3px 7px 10px rgba($color: #000000, $alpha: 0.5);
+    }
+    &:active {
+      box-shadow: none;
+      border: 0;
+      transform: translate(0, 0);
+    }
+  }
+
+  &:hover {
+    transform: translateY(-30px);
+    &:before {
+      opacity: 1;
+    }
+    & .cardBoxTwo {
+      @include e(content) {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+// card three
+.cardBoxThree {
+  position: relative;
+  cursor: pointer;
+
+  &:hover .cardBoxThree__front {
+    transform: perspective(600px) rotateX(-180deg);
+  }
+  &:hover .cardBoxThree__back {
+    transform: perspective(600px) rotateX(0deg);
+  }
+
+  @include e(front) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+    transition: 0.5s;
+  }
+
+  @include e(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include e(back) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: perspective(600px) rotateX(180deg) rotateY(0deg);
+    transition: 0.5s;
+  }
+
+  @include e(caption) {
+    font-family: $josefinSans;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba($color: #fff, $alpha: 0.6);
+  }
+  @include e(position) {
+    font-family: $josefinSans;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba($color: #fff, $alpha: 0.5);
+  }
+  @include e(social) {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px 0;
+  }
+  @include e(link) {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: rgba($color: #fff, $alpha: 0.5);
+    border-radius: 100%;
+    background: rgba($color: #fff, $alpha: 0.1);
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+
+    &:hover {
+      color: rgba($color: #fff, $alpha: 1);
+      background: rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+}
+
+// card four
+.cardBoxFour {
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: all 1s;
+
+  &:hover {
+    z-index: 1000;
+    transform: perspective(2000px) rotate(-10deg);
+    // transform: perspective(2000px) rotateX(15deg) rotateY(-23deg);
+  }
+  @include e(imgBox) {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    transform-origin: left;
+    transition: all 1s;
+    border-radius: 5px 10px 10px 5px;
+    overflow: hidden;
+  }
+  @include e(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include e(content) {
+    border-radius: 5px 10px 10px 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 15px;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5);
+    transition: all 1s 0.2s;
+  }
+  @include e(caption) {
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
+  @include e(text) {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: justify;
+  }
+
+  &:hover .cardBoxFour {
+    @include e(imgBox) {
+      transform: rotateY(-135deg);
+    }
+    @include e(content) {
+      box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+// card five
+.cardBoxFive {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  @include m(one) {
+    &::before {
+      background: url(../img/photo-card-8.jpg);
+    }
+  }
+  @include m(two) {
+    &::before {
+      background: url(../img/photo-card-7.jpg);
+    }
+  }
+  @include m(three) {
+    &::before {
+      background: url(../img/photo-card-9.jpg);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: 0.5s linear;
+  }
+
+  &:hover {
+    &::before {
+      width: 0;
+    }
+  }
+
+  @include e(img) {
+    display: block;
+    width: 100%;
+  }
+}
+
+// card six
+.cardBoxSix {
+  min-height: 400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  background: #060c21;
+  padding: 60px 20px;
+  border: 1px solid #000;
+  position: relative;
+
+  @include e(content) {
+    position: relative;
+    z-index: 2;
+    transform: translateY(30px);
+  }
+  @include e(caption) {
+    font-family: $Poppins;
+    color: #fff;
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
+  @include e(text) {
+    font-family: $Poppins;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+  }
+  @include e(link) {
+    display: inline-block;
+    font-family: $Poppins;
+    color: #fff;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    transform: translateY(-60px);
+    opacity: 0;
+    transition: all 0.5s;
+    user-select: none;
+
+    &:hover {
+      background: #fff;
+      color: #060c21;
+    }
+  }
+  @include e(number) {
+    font-family: $Poppins;
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba($color: #fff, $alpha: 0.1);
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    right: 0;
+    transition: 0.5s;
+    cursor: default;
+    user-select: none;
+  }
+
+  &:hover {
+    .cardBoxSix {
+      @include e(link) {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      @include e(number) {
+        top: -90px;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    transform: skew(2deg, 2deg);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @include m(one) {
+    &::before {
+      background: linear-gradient(to top left, #ff0057, #e64a19);
+    }
+  }
+  @include m(two) {
+    &::before {
+      background: linear-gradient(to top left, #89ff00, #00bcd4);
+    }
+  }
+  @include m(three) {
+    &::before {
+      background: linear-gradient(to top left, #e91e63, #5d02ff);
+    }
+  }
+}
+
+// card seven
+%contentStartValue {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.1s;
+}
+%contentEndValue {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+.cardBoxSeven {
+  background: #232323;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s;
+  }
+  &:nth-of-type(1)::before {
+    background: #9bdc28;
+  }
+  &:nth-of-type(2)::before {
+    background: #dc9d0b;
+  }
+  &:nth-of-type(3)::before {
+    background: #df2f36;
+  }
+  &:hover::before {
+    clip-path: circle(300px at 80% -20%);
+  }
+  &::after {
+    content: "Nike";
+    position: absolute;
+    bottom: 10%;
+    left: -20%;
+    font-size: 12rem;
+    font-weight: bold;
+    font-style: italic;
+    color: rgba($color: #fff, $alpha: 0.05);
+  }
+
+  @include e(imgBox) {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+  }
+  @include e(img) {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    transform: rotate(-30deg);
+    transition: 0.5s;
+  }
+  @include e(content) {
+    transform: translateY(100%);
+    position: relative;
+    z-index: 1;
+  }
+  @include e(caption) {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+    @extend %contentStartValue;
+  }
+  @include e(sizeBox) {
+    text-align: center;
+    padding-bottom: 15px;
+    @extend %contentStartValue;
+  }
+  @include e(sizeCaption) {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding-right: 7px;
+  }
+  @include e(number) {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: rgba($color: #fff, $alpha: 0.5);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: #232323;
+    line-height: 26px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background: rgba($color: #fff, $alpha: 1);
+    }
+  }
+  @include e(colorBox) {
+    text-align: center;
+    padding-bottom: 25px;
+    @extend %contentStartValue;
+  }
+  @include e(colorCaption) {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding-right: 7px;
+  }
+  @include e(color) {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: red;
+    border: 1px solid #000;
+    border-radius: 50%;
+
+    @include m(lime) {
+      background: #9bdc28;
+    }
+    @include m(blue) {
+      background: #046ef5;
+    }
+    @include m(red) {
+      background: #e81922;
+    }
+    @include m(browm) {
+      background: #dc9d0b;
+    }
+    @include m(darkGrey) {
+      background: #232323;
+    }
+    @include m(darkBlue) {
+      background: darkBlue;
+    }
+  }
+  @include e(link) {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    color: #232323;
+    text-decoration: none;
+    @extend %contentStartValue;
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 1);
+      transition: all 5s;
+    }
+  }
+
+  &:hover .cardBoxSeven {
+    @include e(imgBox) {
+      top: 20%;
+      transform: translate(-50%, -50%);
+    }
+    @include e(img) {
+      width: 60%;
+      transform: rotate(0deg);
+    }
+    @include e(caption) {
+      @extend %contentEndValue;
+      transition-delay: 0.3s;
+    }
+    @include e(sizeBox) {
+      @extend %contentEndValue;
+      transition-delay: 0.4s;
+    }
+    @include e(colorBox) {
+      @extend %contentEndValue;
+      transition-delay: 0.5s;
+    }
+    @include e(link) {
+      @extend %contentEndValue;
+      transition: background-color 0.4s, opacity 0.3s 0.6s, transform 0.3s 0.6s;
+    }
+  }
+}
+
+// card eigth
+.cardBoxEight {
+  width: 300px;
+
+  @include e(imgBox) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    background: #333;
+    transform: translateY(100px);
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s;
+  }
+  @include e(img) {
+    display: block;
+    width: 30%;
+    padding-bottom: 20px;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  @include e(caption) {
+    font-family: consolas, monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  @include e(contentBox) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    height: 200px;
+    padding: 15px;
+    box-shadow: 0 20px 50px #000;
+    transform: translateY(-100px);
+    position: relative;
+    z-index: 1;
+    opacity: 0.2;
+    transition: all 0.3s;
+  }
+  @include e(text) {
+    font-family: consolas, monospace;
+  }
+  @include e(link) {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: consolas, monospace;
+    color: #333;
+    text-decoration: none;
+    border: 3px solid #333;
+    padding: 7px 15px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+
+  &:hover .cardBoxEight {
+    @include e(imgBox) {
+      background: #ff0057;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @include e(img) {
+      opacity: 1;
+    }
+    @include e(caption) {
+      opacity: 1;
+    }
+    @include e(contentBox) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// card nine
+.cardBoxNine {
+  transition: 0.3s;
+  background: #fff;
+
+  @include e(imgBox) {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #1e9ee0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: #1e9ee0;
+      filter: brightness(90%);
+      transform-origin: bottom;
+      transform: skewX(45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -10px;
+      width: 10px;
+      height: 100%;
+      background: #1e9ee0;
+      filter: brightness(70%);
+      transform-origin: top;
+      transform: skewY(45deg);
+    }
+  }
+  @include e(img) {
+    width: 30%;
+    padding-bottom: 20px;
+  }
+  @include e(caption) {
+    color: #fff;
+    font-family: consolas, monospace;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+  @include e(contentBox) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -10px;
+      width: 10px;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.3);
+      transform-origin: top;
+      transform: skewY(45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.2));
+      transform-origin: bottom;
+      transform: skewX(45deg);
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-40px);
+
+    & .cardBoxNine {
+      @include e(contentBox) {
+        &::after {
+          transform: translateY(40px) skewX(45deg);
+          filter: blur(5px);
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+// card ten
+.cardBoxTen {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  padding: 10px;
+  background: #060c21;
+  box-sizing: content-box;
+  transition: 0.5s;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    filter: blur(40px);
+  }
+
+  @include m(one) {
+    &::before {
+      background: linear-gradient(to top left, #ff0057, #e64a19);
+    }
+    &::after {
+      background: linear-gradient(to top left, #ff0057, #e64a19);
+    }
+  }
+  @include m(two) {
+    &::before {
+      background: linear-gradient(to top left, #89ff00, #00bcd4);
+    }
+    &::after {
+      background: linear-gradient(to top left, #89ff00, #00bcd4);
+    }
+  }
+  @include m(three) {
+    &::before {
+      background: linear-gradient(to top left, #e91e63, #5d02ff);
+    }
+    &::after {
+      background: linear-gradient(to top left, #e91e63, #5d02ff);
+    }
+  }
+
+  @include e(imgBox) {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  @include e(img) {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    transition: 0.5s;
+  }
+  @include e(contentBox) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #040816;
+    opacity: 0;
+  }
+  @include e(name) {
+    font-family: $Poppins;
+    font-size: 1.3rem;
+    color: #fff;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  @include e(position) {
+    display: block;
+    font-family: $Poppins;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  &:hover {
+    height: 400px;
+
+    & .cardBoxTen {
+      @include e(img) {
+        opacity: 1;
+      }
+      @include e(contentBox) {
+        opacity: 1;
+        transition: 0.5s 0.3s;
+      }
+    }
+  }
+}

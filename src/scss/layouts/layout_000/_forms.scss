@@ -1,0 +1,69 @@
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include m(formsOne) {
+    background: rgb(43, 43, 43) url(../img/bg-form-1.jpg) center center / cover
+      no-repeat;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+    }
+  }
+
+  @include m(formsTwo) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #03080a;
+    min-height: 100vh;
+  }
+
+  @include m(formsThree) {
+    background: rgb(43, 43, 43) url(../img/bg-form-3.jpg);
+  }
+}
+
+.formCaption {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+
+  @include m(one) {
+    font-size: 3rem;
+    color: #fff;
+
+    border-bottom: 5px solid $formOne;
+    padding-bottom: 10px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include m(two) {
+    font-size: 3rem;
+    color: $formTwo;
+    padding-left: 10px;
+    margin: 30px 0 30px;
+    // margin-bottom: 30px;
+  }
+
+  @include m(three) {
+    font-family: $sourceSansPro;
+    font-weight: 300;
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

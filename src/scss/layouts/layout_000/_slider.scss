@@ -1,0 +1,82 @@
+.sliderBox {
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+.arrowDown {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  animation: arrowAnimation 0.7s 10s ease infinite;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+.slider {
+  cursor: grab;
+
+  @include e(item) {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      filter: blur(5px);
+    }
+
+    @include m(colors) {
+      background: url(../img/slider-color.jpg) center center / cover no-repeat;
+      &::before {
+        background: url(../img/slider-color.jpg) center center / cover no-repeat;
+      }
+    }
+    @include m(buttons) {
+      background: url(../img/slider-buttons.png) center center / cover no-repeat;
+      &::before {
+        background: url(../img/slider-buttons.png) center center / cover
+          no-repeat;
+      }
+    }
+    @include m(forms) {
+      background: url(../img/slider-form.png) center center / cover no-repeat;
+      &::before {
+        background: url(../img/slider-form.png) center center / cover no-repeat;
+      }
+    }
+    @include m(cards) {
+      background: url(../img/slider-cards.jpg) center center / cover no-repeat;
+      &::before {
+        background: url(../img/slider-cards.jpg) center center / cover no-repeat;
+      }
+    }
+  }
+
+  @include e(content) {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Acme", sans-serif;
+    font-size: 3rem;
+    padding: 0 15px;
+  }
+}

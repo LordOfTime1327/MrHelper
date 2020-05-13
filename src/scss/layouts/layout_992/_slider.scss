@@ -1,0 +1,6 @@
+.slider {
+  @include e(content) {
+    font-size: 7rem;
+    padding: 0 200px;
+  }
+}
